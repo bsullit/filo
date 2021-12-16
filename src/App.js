@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import Main from "./Synth";
+import Main from "./components/Synth";
 import * as Tone from "tone";
 
 const App = () => {

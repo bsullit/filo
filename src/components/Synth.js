@@ -4,6 +4,7 @@ import { useDispatch, useSelector, connect } from "react-redux";
 
 const main = () => {
   const keyboard = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j"];
+
   const synth = new Tone.PolySynth().toDestination();
   synth.set({ volume: -15 });
 
