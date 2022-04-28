@@ -8,14 +8,26 @@ const main = () => {
   const synth = new Tone.PolySynth().toDestination();
   synth.set({ volume: -15 });
 
-  const handleChange = () => {
+  const handleChange = (key) => {
     Tone.context.resume()
+    console.log(key)
     synth.triggerAttackRelease(["C4", "E4", "G4", "B4"], 1);
   };
 
+  const handleKeyDown = (e) => {
+    Tone.context.resume()
+    if (keyboard.includes(e.key)){
+      let key = e.key.toUpperCase();
+      let oct = "3";
+      let newNote = key + oct ;
+      console.log(newNote);
+      synth.triggerAttackRelease([newNote], 1 )
+    }
+  }
+
   return (
     <div >
-      <button onClick={handleChange()} />
+      <input onKeyPress={handleKeyDown} />
     </div>
   );
 };
